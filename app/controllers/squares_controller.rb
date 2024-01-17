@@ -1,5 +1,5 @@
 class SquaresController < ApplicationController
-  before_action :authenticate_user
+  # before_action :authenticate_user
 
   def index
     @squares = Square.all

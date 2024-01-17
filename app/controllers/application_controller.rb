@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   protect_from_forgery with: :exception, unless: -> { request.format.json? }
 
   def current_user
@@ -9,7 +8,7 @@ class ApplicationController < ActionController::Base
       begin
         decoded_token = JWT.decode(
           token,
-          Rails.application.credentials.fetch(:secret_key_base),
+          Rails.application.secrets.fetch(:secret_key_base),
           true,
           { algorithm: "HS256" }
         )

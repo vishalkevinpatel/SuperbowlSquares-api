@@ -1,5 +1,5 @@
 class GridsController < ApplicationController
-  before_action :authenticate_user
+  # before_action :authenticate_user
 
   def index
     @grids = Grid.all
