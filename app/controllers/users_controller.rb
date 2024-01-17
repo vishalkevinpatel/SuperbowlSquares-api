@@ -12,4 +12,25 @@ class UsersController < ApplicationController
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
   end
+
+  def index
+    @users = User.all
+    render :index
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      render json: @user, status: :ok
+    else
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def user_params
+    params.permit(:password, :password_confirmation)
+  end
 end
