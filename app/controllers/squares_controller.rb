@@ -2,7 +2,7 @@ class SquaresController < ApplicationController
   # before_action :authenticate_user
 
   def index
-    @squares = Square.all
+    @squares = Square.where(grid_id: params[:grid_id])
     render :index
   end
 
