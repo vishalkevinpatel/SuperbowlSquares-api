@@ -8,10 +8,9 @@ class SquaresController < ApplicationController
 
   def create
     @square = Square.create(
-      user_id: current_user.id,
+      user_id: params["user_id"],
       grid_id: params["grid_id"],
-      x_location: params["x_location"],
-      y_location: params["y_location"],
+      location: params["location"],
     )
     render :show
   end
