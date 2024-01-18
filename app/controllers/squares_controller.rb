@@ -22,12 +22,13 @@ class SquaresController < ApplicationController
 
   def update
     @square = Square.find_by(id: params[:id])
-    @square.update(
-      user_id: params[:user_id] || @square.user_id,
-      grid_id: params[:grid_id] || @square.grid_id,
-      x_location: params[:x_location] || @square.x_location,
-      y_location: params[:y_location] || @square.y_location,
-    )
+    if @square.user_id == 1
+      @square.update(
+        user_id: params[:user_id] || @square.user_id,
+        grid_id: params[:grid_id] || @square.grid_id,
+        location: params[:location] || @square.location,
+      )
+    end
     #happy path
     if @square.valid?
       render :show
@@ -39,7 +40,13 @@ class SquaresController < ApplicationController
 
   def destroy
     @square = Square.find_by(id: params[:id])
-    @square.destroy
-    render json: { message: "Square has been deleted 😈" }
+    if @square.user_id == current_user.id
+      @square.update(
+        user_id: 1,
+      )
+      render json: { message: "Square has been deleted 😈" }
+    else
+      render json: { message: "you cannont delete this square" }
+    end
   end
 end
