@@ -7,9 +7,14 @@ class GridsController < ApplicationController
   end
 
   def create
+    random_digits = (0..9).to_a.shuffle.join.to_s
+    random_digits1 = (0..9).to_a.shuffle.join.to_s
+
     @grid = Grid.create(
       user_id: current_user.id,
       code: params["code"],
+      rows_digit: random_digits,
+      columns_digit: random_digits1,
     )
     render :show
   end
