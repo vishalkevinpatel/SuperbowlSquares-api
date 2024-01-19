@@ -2,5 +2,5 @@
 # User.create(username: "Brandon", email: "brandon@test.com", password: "password")
 # User.create(username: "Vishal", email: "vishal@test.com", password: "password")
 
-# Grid.create(code: "aaaa", user_id: 1)
-# Grid.create(code: "bbbb", user_id: 2)
+# Grid.create(user_id: 1, name: "grid 1")
+# Grid.create(user_id: 2, name: "grid 2")

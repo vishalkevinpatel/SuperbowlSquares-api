@@ -1,5 +1,6 @@
 json.id grid.id
 json.code grid.code
+json.name grid.name
 json.user_id grid.user_id
 json.rows_digit grid.rows_digit
 json.columns_digit grid.columns_digit
