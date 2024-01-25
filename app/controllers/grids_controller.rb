@@ -9,7 +9,7 @@ class GridsController < ApplicationController
   def create
     random_digits = (0..9).to_a.shuffle.join.to_s
     random_digits1 = (0..9).to_a.shuffle.join.to_s
-    random_code = SecureRandom.alphanumeric(6)
+    random_code = SecureRandom.alphanumeric(6).upcase
 
     @grid = Grid.create(
       user_id: current_user.id,
