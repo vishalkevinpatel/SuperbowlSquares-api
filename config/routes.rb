@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
 
   get "/grids" => "grids#index"
-  get "/ownergrids" => "grids#owner_index"
   post "/grids" => "grids#create"
   get "/grids/:id" => "grids#show"
   patch "/grids/:id" => "grids#update"

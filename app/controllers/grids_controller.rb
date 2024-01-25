@@ -2,12 +2,7 @@ class GridsController < ApplicationController
   # before_action :authenticate_user
 
   def index
-    @grids = current_user.grids.distinct
-    render :index
-  end
-
-  def owner_index
-    @grids = Grid.where(user_id: current_user.id)
+    @grids = Grid.all
     render :index
   end
 
