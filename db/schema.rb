@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_19_180257) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_01_222812) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_19_180257) do
     t.string "rows_digit"
     t.string "columns_digit"
     t.string "name"
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.string "quarter"
+    t.string "location"
+    t.integer "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "squares", force: :cascade do |t|

@@ -16,4 +16,10 @@ Rails.application.routes.draw do
   get "/squares/:id" => "squares#show"
   patch "/squares/:id" => "squares#update"
   delete "/squares/:id" => "squares#destroy"
+
+  get "/scores" => "scores#index"
+  post "/scores" => "scores#create"
+  get "/scores/:id" => "scores#show"
+  patch "/scores/:id" => "scores#update"
+  delete "/scores/:id" => "scores#destroy"
 end

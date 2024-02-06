@@ -4,3 +4,12 @@
 
 # Grid.create(user_id: 1, name: "grid 1", code: "ABCDEF", rows_digit: "0123456789", columns_digit: "0124756389")
 # Grid.create(user_id: 2, name: "grid 2", code: "GHIJKL", rows_digit: "9361842570", columns_digit: "0192756834")
+
+# Score.create(location: "Home", quarter: "Q1", points: 0)
+# Score.create(location: "Home", quarter: "Q2", points: 0)
+# Score.create(location: "Home", quarter: "Q3", points: 0)
+# Score.create(location: "Home", quarter: "Q4", points: 0)
+# Score.create(location: "Away", quarter: "Q1", points: 0)
+# Score.create(location: "Away", quarter: "Q2", points: 0)
+# Score.create(location: "Away", quarter: "Q3", points: 0)
+# Score.create(location: "Away", quarter: "Q4", points: 0)
